@@ -26,6 +26,7 @@ export class AppComponent {
       this.splashScreen.hide();
       this.ble.initBluetoothLE();
       this.ble.initBLE();
+      this.ble.initBluetoothSerial();
     });
   }
 }

@@ -7,6 +7,7 @@ import {SplashScreen} from '@ionic-native/splash-screen/ngx';
 import {StatusBar} from '@ionic-native/status-bar/ngx';
 import {BluetoothLE} from '@ionic-native/bluetooth-le/ngx';
 import {BLE} from '@ionic-native/ble/ngx';
+import { BluetoothSerial } from '@ionic-native/bluetooth-serial/ngx';
 
 import {AppComponent} from './app.component';
 import {AppRoutingModule} from './app-routing.module';
@@ -21,6 +22,7 @@ import {AppRoutingModule} from './app-routing.module';
         {provide: RouteReuseStrategy, useClass: IonicRouteStrategy},
         BluetoothLE,
         BLE,
+        BluetoothSerial,
     ],
     bootstrap: [AppComponent]
 })
