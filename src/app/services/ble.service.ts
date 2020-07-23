@@ -58,10 +58,26 @@ export class BleService {
 
     public initBluetoothSerial() {
 
+        this.bluetoothSerial.isEnabled().then((isEnabled) => {
+            console.log(isEnabled);
+            if (!isEnabled) {
+                this.bluetoothSerial.enable().then((resp) => {
+                    console.log(resp);
+                });
+            }
+        });
+
         this.bluetoothSerial.showBluetoothSettings().then((settings) => {
             console.log('Bluetooth Serial Settings', settings);
         }).catch((error: any) => {
             console.log('Bluetooth Serial Error', error);
+        });
+
+        this.bluetoothSerial.discoverUnpaired().then((unpairedDevices) => {
+            console.log('Bluetooth Serial Unpaired Devices', unpairedDevices);
+            this.bluetoothSerial.setDeviceDiscoveredListener().subscribe((device) => {
+                console.log('Found: ' + device.id + device.name);
+            });
         });
     }
 

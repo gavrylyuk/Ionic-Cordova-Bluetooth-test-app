@@ -24,9 +24,9 @@ export class AppComponent {
     this.platform.ready().then(() => {
       this.statusBar.styleDefault();
       this.splashScreen.hide();
-      this.ble.initBluetoothLE();
+      // this.ble.initBluetoothLE();
       this.ble.initBLE();
-      this.ble.initBluetoothSerial();
+      // this.ble.initBluetoothSerial();
     });
   }
 }
